@@ -118,7 +118,7 @@ jobs:
       
     - name: Install feeds
       run: cd openwrt && ./scripts/feeds install -a -f
-           rm -f feeds/small/luci-app-passwall
+           rm -rf feeds/small/luci-app-passwall
 
     - name: Openwrt AutoUpdate
       run: |
@@ -141,7 +141,7 @@ jobs:
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
         cat package/lean/default-settings/files/zzz-default-settings
-        rm -f feeds/small/luci-app-passwall
+        rm -rf feeds/small/luci-app-passwall
         
     - name: SSH connection to Actions
       uses: P3TERX/ssh2actions@v1.0.0
