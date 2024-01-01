@@ -65,7 +65,7 @@ jobs:
 
     - name: 安装源
       run: cd openwrt && ./scripts/feeds install -a
-           rm -f feeds/small/luci-app-passwall
+           rm -rf feeds/small/luci-app-passwall
       
     - name: 加载自定义设置和调整配置
       run: |
@@ -74,7 +74,7 @@ jobs:
         chmod +x $DIY_P2_SH
         cd openwrt
         $GITHUB_WORKSPACE/$DIY_P2_SH
-        rm -f feeds/small/luci-app-passwall
+        rm -rf feeds/small/luci-app-passwall
         
     - name: SSH链接管理
       uses: P3TERX/ssh2actions@v1.0.0
